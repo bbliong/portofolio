@@ -1,0 +1,2974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="body-green">
+    <style type="text/css">
+        .content-code {
+    background-color: rgba(0,0,0,0.05);
+    padding: 3px;
+    border-radius: 3px;
+    color :black;
+}
+
+.icon-dev{
+    display: inline;
+    position: absolute;
+    left: 50px;
+}
+
+.icon-dev > i {
+    font-size: 20px;
+}
+pre > code {
+    width: 100%;
+}
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.language-javascript{
+  /*      white-space: pre-line !important;
+    word-spacing: initial !important;
+    word-break: break-word !important;
+    word-wrap: break-word !important;*/
+}
+    </style>
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">DKDEPOK</span><span class="text-bold">Docs</span>
+                        </a>
+                    </h1>
+                    
+                </div><!--//branding-->     
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: July 19th, 2018</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="download-section" class="doc-section">
+                                <h2 class="section-title">Permulaan</h2>
+                                <div class="section-block">
+                                    <p>Ini merupakan dokumentasi dari API Diskominfo informasi Infrastruktur Sarana dan Prasarana Sekolah Se-Kota Depok. teknologi yang digunakan adalah Laravel Lumen dengan tingkat authentikasi JWT Auth.
+                                    </p>
+                                    <h6>Status kode yang akan dikeluarkan</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Status Kode</th>
+                                                    <th>Status</th>
+                                                    <th>Deskripsi</th>
+                                                    <th>Solusi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>200</td>
+                                                    <td>Success</td>
+                                                    <td>Tidak terdapat masalah</td>
+                                                    <td>-</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>200</td>
+                                                    <td>error</td>
+                                                    <td>Terjadi kesalahan dengan data</td>
+                                                    <td>Lihat pesan error</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>401</td>
+                                                    <td>error</td>
+                                                    <td>Tidak terautorisasi</td>
+                                                    <td>Login kembali </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td>500</td>
+                                                    <td>error</td>
+                                                    <td>Kesalahan server</td>
+                                                    <td>Laporkan ke admin </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!--//table-responsive-->
+                                </div>
+                            </section><!--//doc-section-->
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">Autentikasi</h2>
+                                <div id="step1"  class="section-block">
+                                    <h3 class="block-title">Sign Up</h3>
+                                    <p>Digunakan untuk mendaftarkan User baru pada database DKDEpok.
+                                    </p>
+                                    <p><code class="content-code">POST http://dkdepok.xyz/api/signup</code></p>
+                                    <div class="code-block">
+                                        <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+     "username": "frederikStef",
+     "name": "frederik",
+     "email": "frederik@gmail.com",
+     "password" : "qwerty123",
+     "password_confirmation" : "qwerty123",
+     "school_id"   : 24
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript"> {
+    "username": "frederikStef",
+    "name": "frederik",
+    "email": "frederik@gmail.com",
+    "school_id": 24,
+    "updated_at": "2019-06-19 09:06:56",
+    "created_at": "2019-06-19 09:06:56",
+    "id": 12
+}
+                                        </code></pre>
+                                    <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Perlu diperhatikan, sebelum mendaftar harus terlebih dahulu mengetahui id dari sekolah yang tersedia pada database, jika tidak maka tidak akan bisa mendaftar</p>
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->
+                                <div id="step2"  class="section-block">
+                                    <h3 class="block-title">Sign In</h3>
+                                    <p>DKDepok API menggunakan JWT Token untuk melakukan autentikasi. Hampir seluruh endpoint yang ada pada API ini harus melalui autentikasi terlebih dahulu. 
+                                    </p>
+                                    <p>Ketika melakukan autentikasi maka akan diberikan suatu token yang terdiri dari alphanumerik lebih dari 100 karakter, simpan token ini dan ketika ingin mengakses end point lainnya perlu ditambahkan header Authorization ketika melakukan request </p>
+                                    <p><code class="content-code">position http://dkdepok.xyz/api/signin</code></p>
+                                    <div class="code-block">
+                                       <!--  <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer &lt;token&gt; </code></p>
+                                        <div class="callout-block callout-success">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div> -->
+                                        <h6>Payload :</h6>
+                                        <pre><code class="language-javascript"> {
+    "email" : "frederik@gmail.com",
+    "password" : "qwerty123"
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript"> {
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3NpZ25pbiIsImlhdCI6MTU2MDkzNDUwMCwiZXhwIjoxNTYwOTM4MTAwLCJuYmYiOjE1NjA5MzQ1MDAsImp0aSI6InJCMEhqTzVUWHFJekp4cEwiLCJzdWIiOjExLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.zeXkuQglC9I7jH4wgT9qNGUbXtHlN2EhCXBNo8wFzGY",
+    "token_type": "bearer",
+    "expires_in": 3600
+}
+                                        </code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="step3"  class="section-block">
+                                    <h3 class="block-title">Logout</h3>
+                                    <p>Dengan hanya tidak menggunakan token bisa dikatan logout, namun jika ingin menghapus token permanen dalam session DKDdepo perlu dilakuakn request logout.
+                                    </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/logout</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah Bearer &lt;token&gt;  dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript"> {
+    "message": "success",
+    "data": "Berhasil Keluar, Silahkan login kembali"
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                                <div id="step4"  class="section-block">
+                                    <h3 class="block-title">Refresh</h3>
+                                    <p>Jika setelah 1 jam maka token akan hangus atau kadaluarsa, selain melakukan login lagi, dapat melakuakn refresh token yang akan mengembalikan nilai token kemnai
+                                    </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/refresh</code></p>
+                                    <div class="code-block">
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript"> {
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck",
+    "token_type": "bearer",
+    "expires_in": 3600
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            </section><!--//doc-section-->
+                            
+                            <section id="code-section" class="doc-section">
+                                <h2 class="section-title">Profile</h2>
+                                <div class="section-block">
+                                    <p>
+                                       End point ini digunakan untuk melihat dan mengubah detail dari data yang sedang login berdasarkan token
+                                    </p>
+                                    
+                                </div><!--//section-block-->                    
+                                <div id="profile" class="section-block">
+                                      <h3 class="block-title">User Profile</h3>
+                                    <p>Melihat detail profile user login.
+                                    </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/profile</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "id": 12,
+    "name": "frederik",
+    "username": "frederikStef",
+    "email": "frederik@gmail.com",
+    "email_verified_at": null,
+    "school_id": 24,
+    "status": 1,
+    "remember_token": null,
+    "created_at": "2019-06-19 09:06:56",
+    "updated_at": "2019-06-19 09:06:56"
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+                                 <div id="profile2" class="section-block">
+                                      <h3 class="block-title">Update User Profile</h3>
+                                    <p>Untuk melakukan update user profile
+                                    </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/profile</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+    "id": 12,
+    "name": "frederik",
+    "username": "frederikStef",
+    "email": "frederik@gmail.com",
+    "email_verified_at": null,
+    "school_id": 24,
+    "status": 1,
+    "remember_token": null,
+    "created_at": "2019-06-19 09:06:56",
+    "updated_at": "2019-06-19 09:06:56"
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 12,
+        "name": "frederik Stefanus",
+        "username": "frederikS",
+        "email": "frederik@gmail.com",
+        "email_verified_at": null,
+        "school_id": 24,
+        "status": 1,
+        "remember_token": null,
+        "created_at": "2019-06-19 09:06:56",
+        "updated_at": "2019-06-19 10:26:25"
+    }
+}
+                                        </code></pre>
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu : </p>
+                                                <pre><code class="language-javascript">{
+        "id" : 4, 
+        "status" : 0, 
+        //Status 0 untuk tidak aktif, dan 1 untuk aktif
+
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->
+                                <div id="profile3" class="section-block">
+                                      <h3 class="block-title">Change Password</h3>
+                                    <p>Mengganti Password</p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/change-password</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+    "current_password" : "qwerty123",
+    "password" : "qwerty1234",
+    "password_confirmation" : "qwerty1234"
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": "Password anda telah berhasil diganti"
+}
+                                        </code></pre>
+                    
+                                </div><!--//section-block-->
+                                <div id="profile4" class="section-block">
+                                      <h3 class="block-title">Show All User </h3>
+                                    <p>Melihat seluruh user yang terdaftar dalam database, hanya bisa dilakukan jika user tersebut adalah admin</p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/user</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3NpZ25pbiIsImlhdCI6MTU2MDk0MDcyMiwiZXhwIjoxNTYwOTQ0MzIyLCJuYmYiOjE1NjA5NDA3MjIsImp0aSI6IkxNb1NTSEZwZG12ejd1V0UiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.m4UM6eJp_ixeBgLFhCBSz-GaU4DcIqOL1rlQu12cUIw </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+    "current_password" : "qwerty123",
+    "password" : "qwerty1234",
+    "password_confirmation" : "qwerty1234"
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": [
+        {
+            "id": 1,
+            "name": "admin",
+            "username": "admin",
+            "email": "admin@admin.com",
+            "email_verified_at": "2019-06-18 08:15:10",
+            "school_id": 1,
+            "status": 1,
+            "remember_token": null,
+            "created_at": "2019-06-18 08:15:29",
+            "updated_at": "2019-06-18 08:15:30"
+        },
+        ........
+    ]
+}
+                                        </code></pre>
+                    
+                                </div><!--//section-block-->
+
+                            </section><!--//doc-section-->
+
+
+<!-- ========================================================================================= -->
+
+                           <section id="schools" class="doc-section">
+                                <h2 class="section-title">School</h2>
+                                <div class="section-block">
+                                    <p>
+                                       End point ini digunakan untuk melihat dan mengubah detail dari data dari sekolah berdasarkan token login
+                                    </p>
+                                    
+                                </div><!--//section-block-->                    
+                                <div id="school" class="section-block">
+                                      <h3 class="block-title">My School</h3>
+                                    <p>Melihat detail dari sekolah yang sedang login
+                                    </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/myschool</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": [
+        {
+            "id": 24,
+            "npsn": "20229382",
+            "nama": "SMP NEGERI COBA BOGOR",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-19 09:06:29",
+            "updated_at": "2019-06-19 09:06:29",
+            "infrastructure": {
+                "id": 23,
+                "peserta_didik": 0,
+                "rombel": 0,
+                "guru": 0,
+                "tendik": 0,
+                "school_id": 24,
+                "created_at": "2019-06-19 09:06:29",
+                "updated_at": "2019-06-19 09:06:29",
+                "classroom": {
+                    "id": 12,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0,
+                        "meja_guru": 0,
+                        "kursi_guru": 0,
+                        "meja_siswa": 0,
+                        "kursi_siswa": 0,
+                        "papan_pajak": 0,
+                        "rak_karya_siswa": 0
+                    },
+                    "peralatan": {
+                        "alat_peraga": 0
+                    },
+                    "media": {
+                        "papan_tulis": 0
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 0,
+                        "tempat_sampah": 0,
+                        "tempat_sampanh": 0,
+                        "tempat_cuci_tangan": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "library": {
+                    "id": 8,
+                    "jumlah": 0,
+                    "buku": {
+                        "buku_pelajaran": 0,
+                        "buku_pengayaan": 0,
+                        "buku_referensi": 0,
+                        "sumber_belajar_lain": 0,
+                        "buku_panduan_pendidikan": 0
+                    },
+                    "perabot": {
+                        "lemari": 0,
+                        "rak_buku": 0,
+                        "meja_baca": 0,
+                        "kursi_baca": 0,
+                        "meja_kerja": 0,
+                        "rak_majalah": 0,
+                        "lemari_katalog": 0,
+                        "meja_multimedia": 0,
+                        "rak_surat_kabar": 0,
+                        "papan_pengumuman": 0
+                    },
+                    "media": {
+                        "peralatan_multimedia": 0
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 0,
+                        "soket_listrik": 0,
+                        "tempat_sampah": 0,
+                        "buku_inventaris": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "leadership_room": {
+                    "id": 5,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0,
+                        "kursi_meja": 0,
+                        "meja_pemimpin": 0,
+                        "kursi_pemimpin": 0,
+                        "papan_statistik": 0
+                    },
+                    "perlengkapan": {
+                        "brankas": 0,
+                        "komputer": 0,
+                        "jam_dinding": 0,
+                        "tempat_sampah": 0,
+                        "filing_cabinet": 0,
+                        "simbol_kenegaraan": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "teacher_room": {
+                    "id": 5,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0,
+                        "kursi_meja": 0,
+                        "meja_kerja": 0,
+                        "papan_statistik": 0,
+                        "papan_pengumuman": 0
+                    },
+                    "media": {
+                        "jam_dinding": 0,
+                        "penanda_waktu": 0,
+                        "tempat_sampah": 0,
+                        "tempat_cuci_tangan": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "toilet": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "perlengkapan": {
+                        "gayung": 0,
+                        "tempat_air": 0,
+                        "tempat_sampah": 0,
+                        "kloset_jongkok": 0,
+                        "gantungan_pakaian": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "lab": {
+                    "id": 6,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0
+                    },
+                    "peralatan": {
+                        "globe": 0,
+                        "poster_ipa": 0,
+                        "lensa_datar": 0,
+                        "cermin_datar": 0,
+                        "lensa_cekung": 0,
+                        "cermin_cekung": 0,
+                        "kaca_pembesar": 0,
+                        "lensa_cembung": 0,
+                        "magnet_batang": 0,
+                        "cermin_cembung": 0,
+                        "model_tata_surya": 0,
+                        "model_tubuh_manusia": 0,
+                        "model_kerangka_manusia": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "warehouse": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "perabot": {
+                        "rak": 0,
+                        "lemari": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "worship_room": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "sportsvenue": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "peralatan": {
+                        "bendera": 0,
+                        "bola_voli": 0,
+                        "tiang_bendera": 0,
+                        "peralatan_senam": 0,
+                        "peralatan_atletik": 0,
+                        "peralatan_sepak_bola": 0,
+                        "peralatan_seni_budaya": 0,
+                        "peralatan_keterampilan": 0
+                    },
+                    "perlengkapan": {
+                        "tape_recorder": 0,
+                        "pengeras_suara": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "health_unit": {
+                    "id": 3,
+                    "jumlah": 0,
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                }
+            }
+        }
+    ]
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+                                 <div id="school2" class="section-block">
+                                      <h3 class="block-title">Update School Profile</h3>
+                                    <p>Untuk melakukan update Data dasar Sekolah
+                                    </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/school</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+    "npsn": "20229382",
+    "nama": "SMP NEGERI COBA 1 BOGOR",
+    "bp": "SMP",
+    "status": "Negeri",
+    "alamat": "BOGOR",
+    "kecamatan" : "Sukaraja",
+    "lb1" : "123",
+    "lb2" : "1234",
+    "lb3" : "123"
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 24,
+        "npsn": "20229382",
+        "nama": "SMP NEGERI COBA 1 BOGOR",
+        "bp": "SMP",
+        "status": "Negeri",
+        "alamat": "BOGOR",
+        "kecamatan": "Sukaraja",
+        "lb1": "123",
+        "lb2": "1234",
+        "lb3": "123",
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 11:26:25"
+    }
+}
+                                        </code></pre>
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu dapat mengubah npsn : </p>
+                                                <pre><code class="language-javascript">{
+
+        "npsn" : "12345566"
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->
+                                <div id="school3" class="section-block">
+                                      <h3 class="block-title">Show all school (simple ver)</h3>
+                                    <p>Melihat seluruh sekolah, tidak mendetail hanya list sekolah saja (KHUSUS ADMIN)</p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/school</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": [
+        {
+            "id": 1,
+            "npsn": "999999999",
+            "nama": "ADMIN",
+            "bp": "ADMIN",
+            "status": "ADMIN",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 08:10:33",
+            "updated_at": "2019-06-18 08:10:33"
+        },
+        {
+            "id": 2,
+            "npsn": "20229081",
+            "nama": "SMP NEGERI 10 DEPOK",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 03:07:13",
+            "updated_at": "2019-06-18 03:33:45"
+        },
+        {
+            "id": 3,
+            "npsn": "20223839",
+            "nama": "SMP NEGERI 1 DEPOK",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 02:26:56",
+            "updated_at": "2019-06-18 03:41:15"
+        },
+        {
+            "id": 4,
+            "npsn": "20229082",
+            "nama": "SMP NEGERI 11 DEPOK",
+            "bp": "SMP",
+            "status": "Swasta",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 08:26:23",
+            "updated_at": "2019-06-18 08:43:57"
+        },
+        {
+            "id": 23,
+            "npsn": "20229332",
+            "nama": "SMP NEGERI COBA DEPOK",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-19 05:48:31",
+            "updated_at": "2019-06-19 05:48:31"
+        },
+        {
+            "id": 24,
+            "npsn": "20229382",
+            "nama": "SMP NEGERI COBA 1 BOGOR",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": "BOGOR",
+            "kecamatan": "Sukaraja",
+            "lb1": "123",
+            "lb2": "1234",
+            "lb3": "123",
+            "created_at": "2019-06-19 09:06:29",
+            "updated_at": "2019-06-19 11:26:25"
+        }
+    ]
+}
+                                        </code></pre>
+                    
+                                </div><!--//section-block-->
+                                <div id="school4" class="section-block">
+                                      <h3 class="block-title">Show All School </h3>
+                                    <p>Melihat seluruh sekolah detail version,hanya bisa dilakukan jika user tersebut adalah admin</p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/schools</code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3NpZ25pbiIsImlhdCI6MTU2MDk0MDcyMiwiZXhwIjoxNTYwOTQ0MzIyLCJuYmYiOjE1NjA5NDA3MjIsImp0aSI6IkxNb1NTSEZwZG12ejd1V0UiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.m4UM6eJp_ixeBgLFhCBSz-GaU4DcIqOL1rlQu12cUIw </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": [
+        {
+            "id": 1,
+            "npsn": "999999999",
+            "nama": "ADMIN",
+            "bp": "ADMIN",
+            "status": "ADMIN",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 08:10:33",
+            "updated_at": "2019-06-18 08:10:33",
+            "infrastructure": null
+        },
+        {
+            "id": 2,
+            "npsn": "20229081",
+            "nama": "SMP NEGERI 10 DEPOK",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 03:07:13",
+            "updated_at": "2019-06-18 03:33:45",
+            "infrastructure": {
+                "id": 3,
+                "peserta_didik": 1,
+                "rombel": 1,
+                "guru": 1,
+                "tendik": 1,
+                "school_id": 2,
+                "created_at": "2019-06-18 04:11:37",
+                "updated_at": "2019-06-18 04:21:01",
+                "classroom": null,
+                "library": null,
+                "leadership_room": null,
+                "teacher_room": null,
+                "toilet": null,
+                "lab": null,
+                "warehouse": null,
+                "worship_room": null,
+                "sportsvenue": null,
+                "health_unit": null
+            }
+        },
+        {
+            "id": 3,
+            "npsn": "20223839",
+            "nama": "SMP NEGERI 1 DEPOK",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 02:26:56",
+            "updated_at": "2019-06-18 03:41:15",
+            "infrastructure": {
+                "id": 1,
+                "peserta_didik": 1211,
+                "rombel": 33,
+                "guru": 46,
+                "tendik": 15,
+                "school_id": 3,
+                "created_at": "2019-06-18 02:31:04",
+                "updated_at": "2019-06-18 02:31:06",
+                "classroom": null,
+                "library": null,
+                "leadership_room": null,
+                "teacher_room": null,
+                "toilet": null,
+                "lab": null,
+                "warehouse": null,
+                "worship_room": null,
+                "sportsvenue": null,
+                "health_unit": null
+            }
+        },
+        {
+            "id": 4,
+            "npsn": "20229082",
+            "nama": "SMP NEGERI 11 DEPOK",
+            "bp": "SMP",
+            "status": "Swasta",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 08:26:23",
+            "updated_at": "2019-06-18 08:43:57",
+            "infrastructure": {
+                "id": 6,
+                "peserta_didik": 1200,
+                "rombel": 33,
+                "guru": 47,
+                "tendik": 13,
+                "school_id": 4,
+                "created_at": "2019-06-18 08:26:23",
+                "updated_at": "2019-06-18 08:48:50",
+                "classroom": {
+                    "id": 1,
+                    "jumlah": 0,
+                    "perabot": null,
+                    "peralatan": null,
+                    "media": null,
+                    "perlengkapan": null,
+                    "infrastructure_id": 6,
+                    "created_at": "2019-06-18 17:13:36",
+                    "updated_at": "2019-06-18 17:13:37"
+                },
+                "library": null,
+                "leadership_room": null,
+                "teacher_room": null,
+                "toilet": null,
+                "lab": null,
+                "warehouse": null,
+                "worship_room": null,
+                "sportsvenue": null,
+                "health_unit": null
+            }
+        },
+        {
+            "id": 23,
+            "npsn": "20229332",
+            "nama": "SMP NEGERI COBA DEPOK",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-19 05:48:31",
+            "updated_at": "2019-06-19 05:48:31",
+            "infrastructure": {
+                "id": 22,
+                "peserta_didik": 0,
+                "rombel": 0,
+                "guru": 0,
+                "tendik": 0,
+                "school_id": 23,
+                "created_at": "2019-06-19 05:48:31",
+                "updated_at": "2019-06-19 05:48:31",
+                "classroom": {
+                    "id": 11,
+                    "jumlah": 26,
+                    "perabot": {
+                        "lemari": 20,
+                        "meja_guru": 30,
+                        "kursi_guru": 20,
+                        "meja_siswa": 100,
+                        "kursi_siswa": 200,
+                        "papan_pajak": 2,
+                        "rak_karya_siswa": 5
+                    },
+                    "peralatan": {
+                        "alat_peraga": 2
+                    },
+                    "media": {
+                        "papan_tulis": 20
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 20,
+                        "soket_listrik": 20,
+                        "tempat_sampah": 10,
+                        "tempat_cuci_tangan": 30
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 07:18:02"
+                },
+                "library": {
+                    "id": 7,
+                    "jumlah": 0,
+                    "buku": {
+                        "buku_pelajaran": 0,
+                        "buku_pengayaan": 0,
+                        "buku_referensi": 0,
+                        "sumber_belajar_lain": 0,
+                        "buku_panduan_pendidikan": 0
+                    },
+                    "perabot": {
+                        "lemari": 0,
+                        "rak_buku": 0,
+                        "meja_baca": 0,
+                        "kursi_baca": 0,
+                        "meja_kerja": 0,
+                        "rak_majalah": 0,
+                        "lemari_katalog": 0,
+                        "meja_multimedia": 0,
+                        "rak_surat_kabar": 0,
+                        "papan_pengumuman": 0
+                    },
+                    "media": {
+                        "peralatan_multimedia": 0
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 0,
+                        "soket_listrik": 0,
+                        "tempat_sampah": 0,
+                        "buku_inventaris": 0
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 05:48:31"
+                },
+                "leadership_room": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0,
+                        "kursi_meja": 0,
+                        "meja_pemimpin": 0,
+                        "kursi_pemimpin": 0,
+                        "papan_statistik": 0
+                    },
+                    "perlengkapan": {
+                        "brankas": 0,
+                        "komputer": 0,
+                        "jam_dinding": 0,
+                        "tempat_sampah": 0,
+                        "filing_cabinet": 0,
+                        "simbol_kenegaraan": 0
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 05:48:31"
+                },
+                "teacher_room": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0,
+                        "kursi_meja": 0,
+                        "meja_kerja": 0,
+                        "papan_statistik": 0,
+                        "papan_pengumuman": 0
+                    },
+                    "media": {
+                        "jam_dinding": 0,
+                        "penanda_waktu": 0,
+                        "tempat_sampah": 0,
+                        "tempat_cuci_tangan": 0
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 05:48:31"
+                },
+                "toilet": {
+                    "id": 3,
+                    "jumlah": 30,
+                    "perlengkapan": {
+                        "gayung": 0,
+                        "tempat_air": 10,
+                        "tempat_sampah": 0,
+                        "kloset_jongkok": 0,
+                        "gantungan_pakaian": 0
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 07:09:08"
+                },
+                "lab": {
+                    "id": 5,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0
+                    },
+                    "peralatan": {
+                        "globe": 0,
+                        "poster_ipa": 0,
+                        "lensa_datar": 0,
+                        "cermin_datar": 0,
+                        "lensa_cekung": 0,
+                        "cermin_cekung": 0,
+                        "kaca_pembesar": 0,
+                        "lensa_cembung": 0,
+                        "magnet_batang": 0,
+                        "cermin_cembung": 0,
+                        "model_tata_surya": 0,
+                        "model_tubuh_manusia": 0,
+                        "model_kerangka_manusia": 0
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 05:48:31"
+                },
+                "warehouse": {
+                    "id": 3,
+                    "jumlah": 10,
+                    "perabot": {
+                        "rak": 0,
+                        "lemari": 20
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 07:10:26"
+                },
+                "worship_room": {
+                    "id": 3,
+                    "jumlah": 10,
+                    "perabot": {
+                        "lemari": 0
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 0
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 07:06:33"
+                },
+                "sportsvenue": {
+                    "id": 3,
+                    "jumlah": 10,
+                    "peralatan": {
+                        "bendera": 0,
+                        "bola_voli": 0,
+                        "tiang_bendera": 20,
+                        "peralatan_senam": 0,
+                        "peralatan_atletik": 0,
+                        "peralatan_sepak_bola": 0,
+                        "peralatan_seni_budaya": 0,
+                        "peralatan_keterampilan": 0
+                    },
+                    "perlengkapan": {
+                        "tape_recorder": 0,
+                        "pengeras_suara": 0
+                    },
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 07:13:00"
+                },
+                "health_unit": {
+                    "id": 2,
+                    "jumlah": 0,
+                    "infrastructure_id": 22,
+                    "created_at": "2019-06-19 05:48:31",
+                    "updated_at": "2019-06-19 05:48:31"
+                }
+            }
+        },
+        {
+            "id": 24,
+            "npsn": "20229382",
+            "nama": "SMP NEGERI COBA 1 BOGOR",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": "BOGOR",
+            "kecamatan": "Sukaraja",
+            "lb1": "123",
+            "lb2": "1234",
+            "lb3": "123",
+            "created_at": "2019-06-19 09:06:29",
+            "updated_at": "2019-06-19 11:26:25",
+            "infrastructure": {
+                "id": 23,
+                "peserta_didik": 0,
+                "rombel": 0,
+                "guru": 0,
+                "tendik": 0,
+                "school_id": 24,
+                "created_at": "2019-06-19 09:06:29",
+                "updated_at": "2019-06-19 09:06:29",
+                "classroom": {
+                    "id": 12,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0,
+                        "meja_guru": 0,
+                        "kursi_guru": 0,
+                        "meja_siswa": 0,
+                        "kursi_siswa": 0,
+                        "papan_pajak": 0,
+                        "rak_karya_siswa": 0
+                    },
+                    "peralatan": {
+                        "alat_peraga": 0
+                    },
+                    "media": {
+                        "papan_tulis": 0
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 0,
+                        "tempat_sampah": 0,
+                        "tempat_sampanh": 0,
+                        "tempat_cuci_tangan": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "library": {
+                    "id": 8,
+                    "jumlah": 0,
+                    "buku": {
+                        "buku_pelajaran": 0,
+                        "buku_pengayaan": 0,
+                        "buku_referensi": 0,
+                        "sumber_belajar_lain": 0,
+                        "buku_panduan_pendidikan": 0
+                    },
+                    "perabot": {
+                        "lemari": 0,
+                        "rak_buku": 0,
+                        "meja_baca": 0,
+                        "kursi_baca": 0,
+                        "meja_kerja": 0,
+                        "rak_majalah": 0,
+                        "lemari_katalog": 0,
+                        "meja_multimedia": 0,
+                        "rak_surat_kabar": 0,
+                        "papan_pengumuman": 0
+                    },
+                    "media": {
+                        "peralatan_multimedia": 0
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 0,
+                        "soket_listrik": 0,
+                        "tempat_sampah": 0,
+                        "buku_inventaris": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "leadership_room": {
+                    "id": 5,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0,
+                        "kursi_meja": 0,
+                        "meja_pemimpin": 0,
+                        "kursi_pemimpin": 0,
+                        "papan_statistik": 0
+                    },
+                    "perlengkapan": {
+                        "brankas": 0,
+                        "komputer": 0,
+                        "jam_dinding": 0,
+                        "tempat_sampah": 0,
+                        "filing_cabinet": 0,
+                        "simbol_kenegaraan": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "teacher_room": {
+                    "id": 5,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0,
+                        "kursi_meja": 0,
+                        "meja_kerja": 0,
+                        "papan_statistik": 0,
+                        "papan_pengumuman": 0
+                    },
+                    "media": {
+                        "jam_dinding": 0,
+                        "penanda_waktu": 0,
+                        "tempat_sampah": 0,
+                        "tempat_cuci_tangan": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "toilet": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "perlengkapan": {
+                        "gayung": 0,
+                        "tempat_air": 0,
+                        "tempat_sampah": 0,
+                        "kloset_jongkok": 0,
+                        "gantungan_pakaian": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "lab": {
+                    "id": 6,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0
+                    },
+                    "peralatan": {
+                        "globe": 0,
+                        "poster_ipa": 0,
+                        "lensa_datar": 0,
+                        "cermin_datar": 0,
+                        "lensa_cekung": 0,
+                        "cermin_cekung": 0,
+                        "kaca_pembesar": 0,
+                        "lensa_cembung": 0,
+                        "magnet_batang": 0,
+                        "cermin_cembung": 0,
+                        "model_tata_surya": 0,
+                        "model_tubuh_manusia": 0,
+                        "model_kerangka_manusia": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "warehouse": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "perabot": {
+                        "rak": 0,
+                        "lemari": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "worship_room": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "perabot": {
+                        "lemari": 0
+                    },
+                    "perlengkapan": {
+                        "jam_dinding": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "sportsvenue": {
+                    "id": 4,
+                    "jumlah": 0,
+                    "peralatan": {
+                        "bendera": 0,
+                        "bola_voli": 0,
+                        "tiang_bendera": 0,
+                        "peralatan_senam": 0,
+                        "peralatan_atletik": 0,
+                        "peralatan_sepak_bola": 0,
+                        "peralatan_seni_budaya": 0,
+                        "peralatan_keterampilan": 0
+                    },
+                    "perlengkapan": {
+                        "tape_recorder": 0,
+                        "pengeras_suara": 0
+                    },
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                },
+                "health_unit": {
+                    "id": 3,
+                    "jumlah": 0,
+                    "infrastructure_id": 23,
+                    "created_at": "2019-06-19 09:06:29",
+                    "updated_at": "2019-06-19 09:06:29"
+                }
+            }
+        }
+    ]
+}
+                                        </code></pre>
+                    
+                                </div><!--//section-block-->
+                                <div id="school5" class="section-block">
+                                      <h3 class="block-title">Show single school</h3>
+                                    <p>Melihat salah satu sekolah (KHUSUS ADMIN)</p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/school/&lt; NPSN Sekolah&gt; </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                                <p>Ubah NPSN pada end point, sesuai sekolah yang ingin dilihat</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": [
+        {
+            "id": 3,
+            "npsn": "20223839",
+            "nama": "SMP NEGERI 1 DEPOK",
+            "bp": "SMP",
+            "status": "Negeri",
+            "alamat": null,
+            "kecamatan": null,
+            "lb1": null,
+            "lb2": null,
+            "lb3": null,
+            "created_at": "2019-06-18 02:26:56",
+            "updated_at": "2019-06-18 03:41:15",
+            "user": [
+                {
+                    "id": 3,
+                    "name": "frederik depok",
+                    "username": "frederikstep",
+                    "email": "frederikstep@gmail.com",
+                    "email_verified_at": null,
+                    "school_id": 3,
+                    "status": 1,
+                    "remember_token": null,
+                    "created_at": "2019-06-18 05:39:59",
+                    "updated_at": "2019-06-18 07:39:17"
+                }
+            ],
+            "infrastructure": {
+                "id": 1,
+                "peserta_didik": 1211,
+                "rombel": 33,
+                "guru": 46,
+                "tendik": 15,
+                "school_id": 3,
+                "created_at": "2019-06-18 02:31:04",
+                "updated_at": "2019-06-18 02:31:06"
+            }
+        }
+    ]
+}
+                                        </code></pre>
+                    
+                                </div><!--//section-block-->
+
+                                <div id="school6" class="section-block">
+                                      <h3 class="block-title">Create school</h3>
+                                    <p>Membuat sekolah (KHUSUS ADMIN)</p>
+                                     <p><code class="content-code">POST http://dkdepok.xyz/api/school </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+    "npsn" : "20779382",
+    "nama" :  "SMP NEGERI 2 COBA BOGOR",
+    "bp" : "SMP",
+    "status" : "Negeri"
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "Berhasil menambahkan sekolah dengan npsn 20779382",
+    "data": {
+        "npsn": "20779382",
+        "nama": "SMP NEGERI 2 COBA BOGOR",
+        "bp": "SMP",
+        "status": "Negeri",
+        "alamat": null,
+        "kecamatan": null,
+        "updated_at": "2019-06-19 12:20:26",
+        "created_at": "2019-06-19 12:20:26",
+        "id": 25
+    }
+}
+                                        </code></pre>
+                    
+                                </div><!--//section-block-->
+
+                                <div id="school7" class="section-block">
+                                      <h3 class="block-title">Delete school</h3>
+                                    <p>Menghapus sekolah (KHUSUS ADMIN)</p>
+                                     <p><code class="content-code">DELETE http://dkdepok.xyz/api/school </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+    "npsn" : "20779382"
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": "Menghapus data dengan NPSN 20779382"
+}
+                                        </code></pre>
+                    
+                                </div><!--//section-block-->
+
+
+                            </section><!--//doc-section-->
+
+                     <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">Infrastructure</h2>
+
+                                <div id="infra" class="section-block">
+                                      <h3 class="block-title">Update Infrastructure</h3>
+                                    <p>Melakukan update infrastructure, infrastructure terdapat beberapa sub infra, pada end point ini tidak melakukan update pada sub </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "peserta_didik": 1200,
+        "rombel": 33,
+        "guru": 47,
+        "tendik": 13
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 23,
+        "peserta_didik": 1200,
+        "rombel": 33,
+        "guru": 47,
+        "tendik": 13,
+        "school_id": 24,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 13:03:12"
+    }
+}
+                                        </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+
+     "school_id" : 4 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->
+                    </section>
+
+<!-- ================================================================================     -->                               <section id="infras" class="doc-section">
+                                <h2 class="section-title">Infrastructure</h2>
+
+                                <div id="infra" class="section-block">
+                                      <h3 class="block-title">Update Infrastructure</h3>
+                                    <p>Melakukan update infrastructure, infrastructure terdapat beberapa sub infra, pada end point ini tidak melakukan update pada sub </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "peserta_didik": 1200,
+        "rombel": 33,
+        "guru": 47,
+        "tendik": 13
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 23,
+        "peserta_didik": 1200,
+        "rombel": 33,
+        "guru": 47,
+        "tendik": 13,
+        "school_id": 24,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 13:03:12"
+    }
+}
+                                        </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "school_id" : 4 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->
+                    </section>
+
+<!-- ======================================================================== -->
+                               <section id="infras" class="doc-section">
+                                <h2 class="section-title">Sub Infrastructure</h2>
+
+                                <div id="sub11" class="section-block">
+                                      <h3 class="block-title">Get Classroom Infrastructure</h3>
+                                    <p>Melihat sub Classroom dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/classroom </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 12,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0,
+            "meja_guru": 0,
+            "kursi_guru": 0,
+            "meja_siswa": 0,
+            "kursi_siswa": 0,
+            "papan_pajak": 0,
+            "rak_karya_siswa": 0
+        },
+        "peralatan": {
+            "alat_peraga": 0
+        },
+        "media": {
+            "papan_tulis": 0
+        },
+        "perlengkapan": {
+            "jam_dinding": 0,
+            "tempat_sampah": 0,
+            "tempat_sampanh": 0,
+            "tempat_cuci_tangan": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+                            <div id="sub12" class="section-block">
+                                      <h3 class="block-title">Get Classroom Infrastructure</h3>
+                                    <p>Melihat sub Classroom dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/classroom </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah" : 26,
+        "perabot": {
+            "kursi_siswa" : 200,
+            "meja_siswa": 100,
+            "kursi_guru" : 20,
+            "meja_guru" : 30,
+            "lemari" : 20,
+            "rak_karya_siswa" : 5,
+            "papan_pajak" : 2
+        },
+        "peralatan": {
+            "alat_peraga" : 2
+        },
+        "media": {
+            "papan_tulis" : 20
+        },
+        "perlengkapan": {
+            "soket_listrik" : 20,
+            "tempat_cuci_tangan" : 30,
+            "jam_dinding" : 20,
+            "tempat_sampah" : 10
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 12,
+        "jumlah": 26,
+        "perabot": {
+            "lemari": 20,
+            "meja_guru": 30,
+            "kursi_guru": 20,
+            "meja_siswa": 100,
+            "kursi_siswa": 200,
+            "papan_pajak": 2,
+            "rak_karya_siswa": 5
+        },
+        "peralatan": {
+            "alat_peraga": 2
+        },
+        "media": {
+            "papan_tulis": 20
+        },
+        "perlengkapan": {
+            "jam_dinding": 20,
+            "soket_listrik": 20,
+            "tempat_sampah": 10,
+            "tempat_cuci_tangan": 30
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 13:47:17"
+    }
+}
+                                        </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->
+
+
+<!-- ================================== -->
+
+                                <div id="sub21" class="section-block">
+                                      <h3 class="block-title">Get Library Infrastructure</h3>
+                                    <p>Melihat sub Library dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/library </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 8,
+        "jumlah": 0,
+        "buku": {
+            "buku_pelajaran": 0,
+            "buku_pengayaan": 0,
+            "buku_referensi": 0,
+            "sumber_belajar_lain": 0,
+            "buku_panduan_pendidikan": 0
+        },
+        "perabot": {
+            "lemari": 0,
+            "rak_buku": 0,
+            "meja_baca": 0,
+            "kursi_baca": 0,
+            "meja_kerja": 0,
+            "rak_majalah": 0,
+            "lemari_katalog": 0,
+            "meja_multimedia": 0,
+            "rak_surat_kabar": 0,
+            "papan_pengumuman": 0
+        },
+        "media": {
+            "peralatan_multimedia": 0
+        },
+        "perlengkapan": {
+            "jam_dinding": 0,
+            "soket_listrik": 0,
+            "tempat_sampah": 0,
+            "buku_inventaris": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub22" class="section-block">
+                                      <h3 class="block-title">Update Library Infrastructure</h3>
+                                    <p>Melihat sub Library dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/library </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+         "jumlah": 0,
+        "buku": {
+            "buku_pelajaran": 0,
+            "buku_pengayaan": 0,
+            "buku_referensi": 0,
+            "sumber_belajar_lain": 0,
+            "buku_panduan_pendidikan": 0
+        },
+        "perabot": {
+            "lemari": 0,
+            "rak_buku": 0,
+            "meja_baca": 0,
+            "kursi_baca": 0,
+            "meja_kerja": 0,
+            "rak_majalah": 0,
+            "lemari_katalog": 0,
+            "meja_multimedia": 0,
+            "rak_surat_kabar": 0,
+            "papan_pengumuman": 0
+        },
+        "media": {
+            "peralatan_multimedia": 0
+        },
+        "perlengkapan": {
+            "jam_dinding": 0,
+            "soket_listrik": 0,
+            "tempat_sampah": 0,
+            "buku_inventaris": 0
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 6,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0
+        },
+        "peralatan": {
+            "globe": 0,
+            "poster_ipa": 0,
+            "lensa_datar": 0,
+            "cermin_datar": 0,
+            "lensa_cekung": 0,
+            "cermin_cekung": 0,
+            "kaca_pembesar": 0,
+            "lensa_cembung": 0,
+            "magnet_batang": 0,
+            "cermin_cembung": 0,
+            "model_tata_surya": 0,
+            "model_tubuh_manusia": 0,
+            "model_kerangka_manusia": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 13:49:51"
+    }
+}
+                                        </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        
+        "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->
+ 
+
+<!-- ================================== -->
+
+                                <div id="sub31" class="section-block">
+                                      <h3 class="block-title">Get Lab Infrastructure</h3>
+                                    <p>Melihat sub Lab dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/lab </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 6,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0
+        },
+        "peralatan": {
+            "globe": 0,
+            "poster_ipa": 0,
+            "lensa_datar": 0,
+            "cermin_datar": 0,
+            "lensa_cekung": 0,
+            "cermin_cekung": 0,
+            "kaca_pembesar": 0,
+            "lensa_cembung": 0,
+            "magnet_batang": 0,
+            "cermin_cembung": 0,
+            "model_tata_surya": 0,
+            "model_tubuh_manusia": 0,
+            "model_kerangka_manusia": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 13:49:51"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub32" class="section-block">
+                                      <h3 class="block-title">Update Lab Infrastructure</h3>
+                                    <p>Melihat sub Lab dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/lab </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0
+        },
+        "peralatan": {
+            "globe": 0,
+            "poster_ipa": 0,
+            "lensa_datar": 0,
+            "cermin_datar": 10,
+            "lensa_cekung": 0,
+            "cermin_cekung": 0,
+            "kaca_pembesar": 0,
+            "lensa_cembung": 0,
+            "magnet_batang": 0,
+            "cermin_cembung": 0,
+            "model_tata_surya": 0,
+            "model_tubuh_manusia": 0,
+            "model_kerangka_manusia": 0
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 6,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0
+        },
+        "peralatan": {
+            "globe": 0,
+            "poster_ipa": 0,
+            "lensa_datar": 0,
+            "cermin_datar": 10,
+            "lensa_cekung": 0,
+            "cermin_cekung": 0,
+            "kaca_pembesar": 0,
+            "lensa_cembung": 0,
+            "magnet_batang": 0,
+            "cermin_cembung": 0,
+            "model_tata_surya": 0,
+            "model_tubuh_manusia": 0,
+            "model_kerangka_manusia": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 14:01:00"
+    }
+}
+                                        </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->                            
+
+
+
+<!-- ================================== -->
+
+                                <div id="sub41" class="section-block">
+                                      <h3 class="block-title">Get LeaderShip Room Infrastructure</h3>
+                                    <p>Melihat sub LeaderShip Room  dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/leadershiproom </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 5,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0,
+            "kursi_meja": 0,
+            "meja_pemimpin": 0,
+            "kursi_pemimpin": 0,
+            "papan_statistik": 0
+        },
+        "perlengkapan": {
+            "brankas": 0,
+            "komputer": 0,
+            "jam_dinding": 0,
+            "tempat_sampah": 0,
+            "filing_cabinet": 0,
+            "simbol_kenegaraan": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub42" class="section-block">
+                                      <h3 class="block-title">Update LeaderShip Room Infrastructure</h3>
+                                    <p>Melihat sub LeaderShip Room dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/leadershiproom </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0,
+            "kursi_meja": 0,
+            "meja_pemimpin": 0,
+            "kursi_pemimpin": 0,
+            "papan_statistik": 0
+        },
+        "perlengkapan": {
+            "brankas": 0,
+            "komputer": 0,
+            "jam_dinding": 0,
+            "tempat_sampah": 30,
+            "filing_cabinet": 0,
+            "simbol_kenegaraan": 0
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 5,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0,
+            "kursi_meja": 0,
+            "meja_pemimpin": 0,
+            "kursi_pemimpin": 0,
+            "papan_statistik": 0
+        },
+        "perlengkapan": {
+            "brankas": 0,
+            "komputer": 0,
+            "jam_dinding": 0,
+            "tempat_sampah": 30,
+            "filing_cabinet": 0,
+            "simbol_kenegaraan": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 14:04:06"
+    }
+}
+                                        </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->                               
+
+<!-- ================================== -->
+
+                                <div id="sub51" class="section-block">
+                                      <h3 class="block-title">Get Teacher Room Infrastructure</h3>
+                                    <p>Melihat sub Teacher Room  dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/teacherroom </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 5,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0,
+            "kursi_meja": 0,
+            "meja_kerja": 0,
+            "papan_statistik": 0,
+            "papan_pengumuman": 0
+        },
+        "media": {
+            "jam_dinding": 0,
+            "penanda_waktu": 0,
+            "tempat_sampah": 0,
+            "tempat_cuci_tangan": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub52" class="section-block">
+                                      <h3 class="block-title">Update Teacher Room Infrastructure</h3>
+                                    <p>Melihat sub Teacher Room dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/teacherroom </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0,
+            "kursi_meja": 0,
+            "meja_kerja": 0,
+            "papan_statistik": 0,
+            "papan_pengumuman": 0
+        },
+        "media": {
+            "jam_dinding": 0,
+            "penanda_waktu": 0,
+            "tempat_sampah": 0,
+            "tempat_cuci_tangan": 0
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 5,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0,
+            "kursi_meja": 0,
+            "meja_kerja": 30,
+            "papan_statistik": 0,
+            "papan_pengumuman": 0
+        },
+        "media": {
+            "jam_dinding": 0,
+            "penanda_waktu": 0,
+            "tempat_sampah": 0,
+            "tempat_cuci_tangan": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 14:09:07"
+    }
+}
+                                        </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->                               
+
+
+<!-- ================================== -->
+
+                                <div id="sub61" class="section-block">
+                                      <h3 class="block-title">Get Worship Room Infrastructure</h3>
+                                    <p>Melihat sub Worship Room  dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/worshiproom </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 4,
+        "jumlah": 0,
+        "perabot": {
+            "lemari": 0
+        },
+        "perlengkapan": {
+            "jam_dinding": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub21" class="section-block">
+                                      <h3 class="block-title">Update Teacher Room Infrastructure</h3>
+                                    <p>Melihat sub Teacher Room dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/teacherroom </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah": 10,
+        "perabot": {
+            "lemari": 0
+        },
+        "perlengkapan": {
+            "jam_dinding": 40
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 4,
+        "jumlah": 10,
+        "perabot": {
+            "lemari": 0
+        },
+        "perlengkapan": {
+            "jam_dinding": 40
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 14:13:20"
+    }
+}                                        </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->                               
+
+<!-- ================================== -->
+
+                                <div id="sub71" class="section-block">
+                                      <h3 class="block-title">Get Toilet Infrastructure</h3>
+                                    <p>Melihat sub Toilet  dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/toilet </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 4,
+        "jumlah": 0,
+        "perlengkapan": {
+            "gayung": 0,
+            "tempat_air": 0,
+            "tempat_sampah": 0,
+            "kloset_jongkok": 0,
+            "gantungan_pakaian": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub21" class="section-block">
+                                      <h3 class="block-title">Update Toilet Infrastructure</h3>
+                                    <p>Melihat sub Toilet dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/toilet </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah": 30,
+        "perlengkapan": {
+            "gayung": 0,
+            "tempat_air":10,
+            "tempat_sampah": 0,
+            "kloset_jongkok": 0,
+            "gantungan_pakaian": 30
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 4,
+        "jumlah": 30,
+        "perlengkapan": {
+            "gayung": 0,
+            "tempat_air": 10,
+            "tempat_sampah": 0,
+            "kloset_jongkok": 0,
+            "gantungan_pakaian": 30
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 14:17:19"
+    }
+}                         </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->                               
+
+
+<!-- ================================== -->
+
+                                <div id="sub81" class="section-block">
+                                      <h3 class="block-title">Get Warehouse Infrastructure</h3>
+                                    <p>Melihat sub Warehouse  dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/warehouse </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 4,
+        "jumlah": 0,
+        "perabot": {
+            "rak": 0,
+            "lemari": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub82" class="section-block">
+                                      <h3 class="block-title">Update Warehouse Infrastructure</h3>
+                                    <p>Melihat sub Warehouse dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/warehouse </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah": 10,
+        "perabot": {
+            "rak": 0,
+            "lemari": 20
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 4,
+        "jumlah": 10,
+        "perabot": {
+            "rak": 0,
+            "lemari": 20
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 14:22:17"
+    }
+}                      </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->                               
+
+
+<!-- ================================== -->
+
+                                <div id="sub91" class="section-block">
+                                      <h3 class="block-title">Get Sportsvenue Infrastructure</h3>
+                                    <p>Melihat sub Sportsvenue  dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/sportsvenue </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 4,
+        "jumlah": 0,
+        "peralatan": {
+            "bendera": 0,
+            "bola_voli": 0,
+            "tiang_bendera": 0,
+            "peralatan_senam": 0,
+            "peralatan_atletik": 0,
+            "peralatan_sepak_bola": 0,
+            "peralatan_seni_budaya": 0,
+            "peralatan_keterampilan": 0
+        },
+        "perlengkapan": {
+            "tape_recorder": 0,
+            "pengeras_suara": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub92" class="section-block">
+                                      <h3 class="block-title">Update Sportsvenue Infrastructure</h3>
+                                    <p>Melihat sub Sportvenue dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/sportsvenue </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah": 10,
+        "peralatan": {
+            "bendera": 0,
+            "bola_voli": 0,
+            "tiang_bendera": 20,
+            "peralatan_senam": 0,
+            "peralatan_atletik": 0,
+            "peralatan_sepak_bola": 0,
+            "peralatan_seni_budaya": 0,
+            "peralatan_keterampilan": 0
+        },
+        "perlengkapan": {
+            "tape_recorder": 0,
+            "pengeras_suara": 0
+        }
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 4,
+        "jumlah": 10,
+        "peralatan": {
+            "bendera": 0,
+            "bola_voli": 0,
+            "tiang_bendera": 20,
+            "peralatan_senam": 0,
+            "peralatan_atletik": 0,
+            "peralatan_sepak_bola": 0,
+            "peralatan_seni_budaya": 0,
+            "peralatan_keterampilan": 0
+        },
+        "perlengkapan": {
+            "tape_recorder": 0,
+            "pengeras_suara": 0
+        },
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 14:25:45"
+    }
+}              </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+        "infrastructure_id": 23// id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->                            
+
+
+<!-- ================================== -->
+
+                                <div id="sub101" class="section-block">
+                                      <h3 class="block-title">Get Health Unit Infrastructure</h3>
+                                    <p>Melihat sub Health Unit  dari infrastructure </p>
+                                     <p><code class="content-code">GET http://dkdepok.xyz/api/infrastructure/healthunit </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 3,
+        "jumlah": 0,
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 09:06:29"
+    }
+}
+                                        </code></pre>
+                                </div><!--//section-block-->
+
+                            <div id="sub102" class="section-block">
+                                      <h3 class="block-title">Update Health Unit Infrastructure</h3>
+                                    <p>Melihat sub Health Unit dari infrastructure </p>
+                                     <p><code class="content-code">PUT http://dkdepok.xyz/api/infrastructure/healthunit </code></p></code></p>
+                                      <h6>Contoh Header:</h6>
+                                        <p><code>Authorization : Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3JlZnJlc2giLCJpYXQiOjE1NjA5MzU4NzAsImV4cCI6MTU2MDkzOTQ5MCwibmJmIjoxNTYwOTM1ODkwLCJqdGkiOiJnNkN3cVBXSVJIcTBabEpSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.HQM-GLfrWIF5Go4VLr1lodic9GbwJ3nmYva41n92vck </code></p>
+                                        <div class="callout-block callout-danger">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Ubah token dengan token yang didapat ketika login</p>
+                                            </div>
+                                        </div>
+                                    <div class="code-block">
+                                         <h6>Payload :</h6>
+                                        <pre><code class="language-javascript">{
+        "jumlah": 10
+}
+                                        </code></pre>
+                                         <h6>Output :</h6>
+                                        <pre><code class="language-javascript">{
+    "message": "success",
+    "data": {
+        "id": 3,
+        "jumlah": 10,
+        "infrastructure_id": 23,
+        "created_at": "2019-06-19 09:06:29",
+        "updated_at": "2019-06-19 14:28:52"
+    }
+}       </code></pre>
+                     <div class="callout-block callout-info">
+                                            <div class="icon-dev">
+                                                 <i class="fas fa-information"></i>
+                                            </div>
+                                            <div class="content">
+                                                <p>Untuk login admin terdapat field tambahan yaitu id infrastrucuture : </p>
+                                                <pre><code class="language-javascript">{
+    
+       "infrastructure_id": 23 // id ini merupakan id infrastructure
+}
+</code></pre>
+
+                                            </div>
+                                        </div>
+                                </div><!--//section-block-->     
+
+
+<!-- =============================================== -->
+                                </section> <!-- end section -->
+
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+	                        
+	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+	                                <a class="nav-link scrollto" href="#download-section">Permulaan</a>
+	                                <a class="nav-link scrollto" href="#installation-section">Autentikasi</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+                                        <a class="nav-link scrollto" href="#step1">Sign In</a>
+                                        <a class="nav-link scrollto" href="#step2">Sign Up</a>
+                                        <a class="nav-link scrollto" href="#step3">Logout</a>
+                                        <a class="nav-link scrollto" href="#step4">Refresh</a>
+                                    </nav><!--//nav-->
+	                                <a class="nav-link scrollto" href="#code-section">Profile</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+                                         <a class="nav-link scrollto" href="#profile">Show My Profile</a>
+                                         <a class="nav-link scrollto" href="#profile2">Update Profile</a>
+                                         <a class="nav-link scrollto" href="#profile3">Change Password</a>
+                                         <a class="nav-link scrollto" href="#profile4">All profile (admin) </a>
+                                    </nav><!--//nav-->
+                                    <a class="nav-link scrollto" href="#schools">School</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+                                         <a class="nav-link scrollto" href="#school">My School</a>
+                                         <a class="nav-link scrollto" href="#school2">Update School</a>
+                                         <a class="nav-link scrollto" href="#school3">Show All School (simple ver / admin)</a>
+                                         <a class="nav-link scrollto" href="#school4">Show All School (full ver / admin)</a>
+                                         <a class="nav-link scrollto" href="#school5">Show single school (admin) </a>
+                                         <a class="nav-link scrollto" href="#school6">Create school (admin) </a>
+                                         <a class="nav-link scrollto" href="#school7">Delete School (admin) </a>
+
+                                    </nav><!--//nav-->
+                                    <a class="nav-link scrollto" href="#infras">Infrastructure</a>
+                                     <nav class="doc-sub-menu nav flex-column">
+                                         <a class="nav-link scrollto" href="#infra">Update inifrastructure</a>
+                                    </nav><!--//nav-->
+                                    <a class="nav-link scrollto" href="#infras">Sub Infrastructure</a>
+                                     <nav class="doc-sub-menu nav flex-column">
+                                         <a class="nav-link scrollto" href="#sub11">Get Class</a>
+                                         <a class="nav-link scrollto" href="#sub12">Update Class</a>
+                                         <a class="nav-link scrollto" href="#sub21">Get Class Library</a>
+                                         <a class="nav-link scrollto" href="#sub22">Update Library</a>
+                                         <a class="nav-link scrollto" href="#sub31">Get Lab</a>
+                                         <a class="nav-link scrollto" href="#sub32">Update Lab</a>
+                                         <a class="nav-link scrollto" href="#sub41">Get Leadership  Room</a>
+                                         <a class="nav-link scrollto" href="#sub42">Update Leadership Room</a>
+                                         <a class="nav-link scrollto" href="#sub51">Get Teacher Room</a>
+                                         <a class="nav-link scrollto" href="#sub52">Update Teacher Room</a>
+                                         <a class="nav-link scrollto" href="#sub61">Get Worship Room</a>
+                                         <a class="nav-link scrollto" href="#sub62">Update Worship Room</a>
+                                         <a class="nav-link scrollto" href="#sub71">Get Toilet</a>
+                                         <a class="nav-link scrollto" href="#sub72">Update Toilet</a>
+                                         <a class="nav-link scrollto" href="#sub81">Get Warehouse</a>
+                                         <a class="nav-link scrollto" href="#sub82">Update Warehouse</a>
+                                         <a class="nav-link scrollto" href="#sub91">Get  Sportsvenue</a>
+                                         <a class="nav-link scrollto" href="#sub92">Update Sportsvenue</a>
+                                         <a class="nav-link scrollto" href="#sub101">Get Health Unit</a>
+                                         <a class="nav-link scrollto" href="#sub102">Update Health Unit</a>
+
+                                    </nav><!--//nav-->
+	                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+        <div id="promo-block" class="promo-block">
+            <div class="container">
+                <div class="promo-block-inner">
+                    <h3 class="promo-title text-center"><i class="fas fa-heart"></i> <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Diskominfo API Documentation </a></h3>
+                </div><!--//promo-block-inner-->  
+            </div><!--//container-->
+        </div><!--//promo-block-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

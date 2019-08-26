@@ -1,0 +1,8 @@
+@media only screen and (max-width: 1000px){
+	.wrapper > .row > .img {
+		display: none;
+	}
+	.bar-skill {
+		width : 100%;
+	}
+}
